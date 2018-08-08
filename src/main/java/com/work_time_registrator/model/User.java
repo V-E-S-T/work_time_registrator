@@ -1,4 +1,4 @@
-package model;
+package com.work_time_registrator.model;
 
 import java.time.LocalDateTime;
 
@@ -8,11 +8,24 @@ public class User {
     private String email;
     private String password;
     private LocalDateTime startTime;
-    private LocalDateTime endTime;
     private long fullWorkTime = 0;
     private boolean atWork = false;
 
     public User() {
+    }
+
+    public User(int id, String email, String password, LocalDateTime startTime, long fullWorkTime, boolean atWork) {
+
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.startTime = startTime;
+        this.fullWorkTime = fullWorkTime;
+        this.atWork = atWork;
+    }
+
+    public User(User u) {
+        this(u.id, u.email, u.password, u.startTime, u.fullWorkTime, u.atWork);
     }
 
     public User(String email, String password) {
@@ -34,10 +47,6 @@ public class User {
 
     public LocalDateTime getStartTime() {
         return startTime;
-    }
-
-    public LocalDateTime getEndTime() {
-        return endTime;
     }
 
     public long getFullWorkTime() {
@@ -62,10 +71,6 @@ public class User {
 
     public void setStartTime(LocalDateTime startTime) {
         this.startTime = startTime;
-    }
-
-    public void setEndTime(LocalDateTime endTime) {
-        this.endTime = endTime;
     }
 
     public void setFullWorkTime(long fullWorkTime) {

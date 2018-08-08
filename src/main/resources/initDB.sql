@@ -8,8 +8,7 @@ CREATE TABLE users
   id               INTEGER PRIMARY KEY DEFAULT nextval('global_seq'),
   email            VARCHAR                 NOT NULL,
   password         VARCHAR                 NOT NULL,
-  startTime        TIMESTAMP               NOT NULL,
-  endTime          TIMESTAMP               NOT NULL,
-  fullWorkTime     INTEGER                 NOT NULL,
+  startTime        TIMESTAMP                       ,
+  fullWorkTime     INTEGER DEFAULT 0       NOT NULL,
   atWork           BOOL DEFAULT FALSE      NOT NULL
 );
