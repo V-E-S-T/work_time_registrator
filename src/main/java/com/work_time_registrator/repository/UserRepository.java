@@ -7,8 +7,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = true)
 public interface UserRepository extends JpaRepository<User, Integer> {
 
+
     @Transactional
-    User getUserById(int id);
+    User findById(int userId);
 
     @Override
     @Transactional

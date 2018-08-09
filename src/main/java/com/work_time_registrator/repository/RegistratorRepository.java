@@ -14,40 +14,54 @@ public class RegistratorRepository {
     UserRepository userRepository;
 
     @Transactional
-    public User setStartWorkTime(int userId, LocalDateTime localDateTime) {
+    public User getUserById(int userId){
 
-        User currentUser = userRepository.getUserById(userId);
-        currentUser.setStartTime(localDateTime);
-        return userRepository.save(currentUser);
+        return userRepository.findById(userId);
     }
 
-    public LocalDateTime getStartWorkTime(int userId) {
+    @Transactional
+    public User save(User user){
 
-        User currentUser = userRepository.getUserById(userId);
-        return currentUser.getStartTime();
+        return userRepository.save(user);
     }
 
 
-    public User getUserById(int userId) {
-
-        return userRepository.getUserById(userId);
-    }
-
-    public long getFullWorkTime(int userId) {
-
-        User currentUser = userRepository.getUserById(userId);
-        return currentUser.getFullWorkTime();
-    }
-
-    public boolean isAtWork(int userId) {
-        User currentUser = userRepository.getUserById(userId);
-        return currentUser.isAtWork();
-    }
-
-    public void setATWork(int userId, boolean atWork) {
-
-        User currentUser = userRepository.getUserById(userId);
-        currentUser.setAtWork(atWork);
-    }
+//    @Transactional
+//    public User setStartWorkTime(int userId, LocalDateTime localDateTime) {
+//
+//        User currentUser = userRepository.getUserById(userId);
+//        currentUser.setStartTime(localDateTime);
+//        return userRepository.save(currentUser);
+//    }
+//
+//    public LocalDateTime getStartWorkTime(int userId) {
+//
+//        User currentUser = userRepository.getUserById(userId);
+//        return currentUser.getStartTime();
+//    }
+//
+//    public void setFullWorkTime(int userId, long time){
+//
+//        userRepository.getUserById(userId).setFullWorkTime(time);
+//    }
+//
+//
+//
+//    public long getFullWorkTime(int userId) {
+//
+//        User currentUser = userRepository.getUserById(userId);
+//        return currentUser.getFullWorkTime();
+//    }
+//
+//    public boolean isAtWork(int userId) {
+//        User currentUser = userRepository.getUserById(userId);
+//        return currentUser.isAtWork();
+//    }
+//
+//    public void setATWork(int userId, boolean atWork) {
+//
+//        User currentUser = userRepository.getUserById(userId);
+//        currentUser.setAtWork(atWork);
+//    }
 
 }

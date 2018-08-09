@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class User {
 
-    private int id;
+    private Integer id;
     private String email;
     private String password;
     private LocalDateTime startTime;
@@ -33,7 +33,7 @@ public class User {
         this.password = password;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -79,5 +79,21 @@ public class User {
 
     public void setAtWork(boolean atWork) {
         this.atWork = atWork;
+    }
+
+    public boolean isNew(){
+        return getId() != null;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || !getClass().equals(User.class)) {
+            return false;
+        }
+        User that = (User) o;
+        return id != null && id.equals(that.id);
     }
 }
