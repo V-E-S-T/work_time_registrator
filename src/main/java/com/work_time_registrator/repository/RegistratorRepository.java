@@ -16,7 +16,7 @@ public class RegistratorRepository {
     @Transactional
     public User getUserById(int userId){
 
-        return userRepository.findById(userId);
+        return userRepository.getUserById(userId);
     }
 
     @Transactional

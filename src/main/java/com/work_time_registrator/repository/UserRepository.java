@@ -9,7 +9,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
 
     @Transactional
-    User findById(int userId);
+    User getUserById(int userId);
 
     @Override
     @Transactional

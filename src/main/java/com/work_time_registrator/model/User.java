@@ -1,7 +1,11 @@
 package com.work_time_registrator.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "users")
 public class User {
 
     private Integer id;
@@ -14,7 +18,7 @@ public class User {
     public User() {
     }
 
-    public User(int id, String email, String password, LocalDateTime startTime, long fullWorkTime, boolean atWork) {
+    public User(Integer id, String email, String password, LocalDateTime startTime, long fullWorkTime, boolean atWork) {
 
         this.id = id;
         this.email = email;
@@ -95,5 +99,17 @@ public class User {
         }
         User that = (User) o;
         return id != null && id.equals(that.id);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", startTime=" + startTime +
+                ", fullWorkTime=" + fullWorkTime +
+                ", atWork=" + atWork +
+                '}';
     }
 }
