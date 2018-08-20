@@ -2,18 +2,20 @@ package com.work_time_registrator.repository;
 
 import com.work_time_registrator.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-@Transactional(readOnly = true)
-public interface UserRepository extends JpaRepository<User, Integer> {
+@Repository
+public interface UserRepository extends CrudRepository<User, Integer> {
 
-
-    @Transactional
-    User getUserById(int userId);
-
-    @Override
-    @Transactional
-    User save(User user);
+//
+//    @Transactional
+//    User getUserById(int userId);
+//
+//    @Override
+//    @Transactional
+//    User save(User user);
 
 
 

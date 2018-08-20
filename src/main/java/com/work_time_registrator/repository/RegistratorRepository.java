@@ -14,9 +14,9 @@ public class RegistratorRepository {
     UserRepository userRepository;
 
     @Transactional
-    public User getUserById(int userId){
+    public User getUserById(Integer userId){
 
-        return userRepository.getUserById(userId);
+        return userRepository.findOne(userId);
     }
 
     @Transactional
@@ -24,6 +24,15 @@ public class RegistratorRepository {
 
         return userRepository.save(user);
     }
+
+//    public static void main(String[] args) {
+//
+//        RegistratorRepository registratorRepository = new RegistratorRepository();
+//
+//        User user = registratorRepository.getUserById(100000);
+//        System.out.println(user.toString());
+//
+//    }
 
 
 //    @Transactional

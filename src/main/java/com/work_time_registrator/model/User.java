@@ -1,18 +1,40 @@
 package com.work_time_registrator.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.data.annotation.Id;
+
+import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "users")
 public class User {
 
+    //public static final int START_SEQ = 100000;
+
+    @Id
+    //@SequenceGenerator(name = "global_seq", sequenceName = "global_seq", allocationSize = 1, initialValue = START_SEQ)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
+//    @Column(name = "email", nullable = false, unique = true)
+//    @Email
+//    @NotBlank
+//    @Size(max = 100)
     private String email;
+
+//    @Column(name = "password", nullable = false)
+//    @NotBlank
+//    @Size(min = 5, max = 10)
     private String password;
+
+//    @Column
     private LocalDateTime startTime;
+
     private long fullWorkTime = 0;
+
     private boolean atWork = false;
 
     public User() {
