@@ -2,14 +2,31 @@ package com.work_time_registrator.repository;
 
 import com.work_time_registrator.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
-@Repository
-public interface UserRepository extends CrudRepository<User, Integer> {
+import java.util.List;
 
-//
+
+public interface UserRepository extends JpaRepository<User, Integer> {
+    @Override
+    User save(User s);
+
+    @Override
+    User findOne(Integer integer);
+
+    @Override
+    boolean exists(Integer integer);
+
+    @Override
+    List<User> findAll();
+
+    @Override
+    void delete(Integer integer);
+
+    @Override
+    void deleteAll();
+
+
+    //
 //    @Transactional
 //    User getUserById(int userId);
 //

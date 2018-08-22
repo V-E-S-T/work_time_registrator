@@ -20,7 +20,8 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.9.RELEASE</version>
+        <version>1.5.14.RELEASE</version>
+        <!--<version>1.5.9.RELEASE</version>-->
     </parent>
 
     <dependencies>
@@ -29,12 +30,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-jpa</artifactId>
-            <version>1.10.5.RELEASE</version>
-            <!--http://qaru.site/questions/1691271/nosuchmethoderror-orgspringframeworkdatarepositoryconfigrepositoryconfigurationsourcegetattribute-->
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.data</groupId>-->
+            <!--<artifactId>spring-data-jpa</artifactId>-->
+            <!--<version>1.10.5.RELEASE</version>-->
+            <!--&lt;!&ndash;http://qaru.site/questions/1691271/nosuchmethoderror-orgspringframeworkdatarepositoryconfigrepositoryconfigurationsourcegetattribute&ndash;&gt;-->
+        <!--</dependency>-->
 
 
         <dependency>

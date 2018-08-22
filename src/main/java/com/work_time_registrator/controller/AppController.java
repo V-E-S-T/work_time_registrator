@@ -16,6 +16,12 @@ public class AppController {
     @Autowired
     ServiceImpl service;
 
+    @RequestMapping("/")
+    public String root()
+    {
+        return "index";
+    }
+
     @RequestMapping("/users")
     public String users(Model model)
     {

@@ -6,24 +6,55 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Repository
-public class RegistratorRepository {
+public class RegistratorRepository{
 
     @Autowired
     UserRepository userRepository;
 
-    @Transactional
-    public User getUserById(Integer userId){
+    public User save(User s){
 
-        return userRepository.findOne(userId);
+        return userRepository.save(s);
     }
 
-    @Transactional
-    public User save(User user){
+    public User findOne(Integer integer){
 
-        return userRepository.save(user);
+        return userRepository.findOne(integer);
     }
+
+    public boolean exists(Integer integer){
+
+        return userRepository.exists(integer);
+    }
+
+    public List<User> findAll(){
+
+        return (List<User>)userRepository.findAll();
+    }
+
+    public void delete(Integer integer){
+
+        userRepository.delete(integer);
+    }
+
+    public void deleteAll(){
+
+        userRepository.deleteAll();
+    }
+//
+//    @Transactional
+//    public User getUserById(Integer userId){
+//
+//        return userRepository.findOne(userId);
+//    }
+//
+//    @Transactional
+//    public User save(User user){
+//
+//        return userRepository.save(user);
+//    }
 
 //    public static void main(String[] args) {
 //
